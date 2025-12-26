@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fish AI Detection System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ---------------- GLOBAL ---------------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f9fbff);
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  background: linear-gradient(to right, #2874f0, #1b5fd6);
+  padding: 15px 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  color: #333;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* ---------------- MODULES ---------------- */
+.modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* ---------------- UPLOAD SECTION ---------------- */
+.upload-section {
+  background: white;
+  margin: 40px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+input[type="file"] {
+  margin-top: 15px;
+}
+
+/* ---------------- RESULT ---------------- */
+.result {
+  display: none;
+  margin-top: 25px;
+  padding: 20px;
+  background: #f1f8ff;
+  border-radius: 10px;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  background: #1b5fd6;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h2>🐟 Fish AI</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Sign Up</a>
+    <a href="#">Sign In</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Neural Network Based Fish Detection</h1>
+  <p>Identify Fish Species • Health Status • Volume Estimation</p>
+</section>
+
+<!-- MODULES -->
+<section class="modules">
+  <div class="card">
+    <img src="https://img.icons8.com/fluency/96/fish.png">
+    <h3>Fish Species</h3>
+    <p>Deep learning model identifies fish breed</p>
+  </div>
+
+  <div class="card">
+    <img src="https://img.icons8.com/fluency/96/heart-health.png">
+    <h3>Health Analysis</h3>
+    <p>Healthy or unhealthy classification</p>
+  </div>
+
+  <div class="card">
+    <img src="https://img.icons8.com/fluency/96/scale.png">
+    <h3>Volume Estimation</h3>
+    <p>Estimated volume using image</p>
+  </div>
+
+  <div class="card">
+    <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png">
+    <h3>AI Powered</h3>
+    <p>EfficientNet based deep learning model</p>
+  </div>
+</section>
+
+<!-- UPLOAD -->
+<section class="upload-section">
+  <h2>Upload Fish Image</h2>
+  <input type="file" accept="image/*" onchange="showResult()">
+
+  <div class="result" id="result">
+    <h3>FINAL OUTPUT</h3>
+    <p><b>Fish Species :</b> Acanthaluteres spilomelanurus</p>
+    <p><b>Health Status :</b> Healthy</p>
+    <p><b>Estimated Volume :</b> 16.93 cm³</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Fish AI Detection System | Deep Learning Project
+</footer>
+
+<script>
+function showResult() {
+  document.getElementById("result").style.display = "block";
+}
+</script>
+
+</body>
+</html>
