@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Fish AI Detection System</title>
+<title>Fish Detection & Health Analysis</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ---------------- GLOBAL ---------------- */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #e3f2fd, #f9fbff);
+/* ---------- GLOBAL ---------- */
+* {
+  box-sizing: border-box;
 }
 
-/* ---------------- HEADER ---------------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f9fbff);
+  color: #333;
+}
+
+/* ---------- HEADER ---------- */
 header {
-  background: linear-gradient(to right, #2874f0, #1b5fd6);
-  padding: 15px 30px;
-  color: white;
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
 header h2 {
@@ -29,20 +34,20 @@ header h2 {
 
 nav a {
   color: white;
+  margin-left: 25px;
   text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-/* ---------------- HERO ---------------- */
+/* ---------- HERO ---------- */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  color: #333;
+  padding: 90px 20px;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 .hero p {
@@ -50,61 +55,83 @@ nav a {
   color: #555;
 }
 
-/* ---------------- MODULES ---------------- */
+/* ---------- MODULES ---------- */
 .modules {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
   padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
 }
 
-.card {
+.module-card {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 30px 20px;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
 }
 
-.card img {
-  width: 60px;
+.module-card:hover {
+  transform: translateY(-8px);
+}
+
+.module-card img {
+  width: 65px;
   margin-bottom: 15px;
 }
 
-.card h3 {
+.module-card h3 {
   margin-bottom: 10px;
 }
 
-/* ---------------- UPLOAD SECTION ---------------- */
-.upload-section {
+/* ---------- UPLOAD ---------- */
+.upload-box {
   background: white;
-  margin: 40px;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  max-width: 500px;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-input[type="file"] {
-  margin-top: 15px;
+.upload-box input {
+  margin-top: 20px;
 }
 
-/* ---------------- RESULT ---------------- */
-.result {
-  display: none;
+button {
   margin-top: 25px;
+  padding: 12px 28px;
+  background: #1976d2;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+/* ---------- RESULT ---------- */
+.result-box {
+  display: none;
+  margin-top: 30px;
   padding: 20px;
   background: #f1f8ff;
-  border-radius: 10px;
+  border-radius: 12px;
+  text-align: left;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* ---------- FOOTER ---------- */
 footer {
-  background: #1b5fd6;
+  margin-top: 50px;
+  background: #0d47a1;
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top: 40px;
 }
 </style>
 </head>
@@ -123,54 +150,56 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Neural Network Based Fish Detection</h1>
-  <p>Identify Fish Species • Health Status • Volume Estimation</p>
+  <h1>AI-Based Fish Detection System</h1>
+  <p>Fish Species Identification • Health Analysis • Volume Estimation</p>
 </section>
 
 <!-- MODULES -->
 <section class="modules">
-  <div class="card">
+  <div class="module-card">
     <img src="https://img.icons8.com/fluency/96/fish.png">
     <h3>Fish Species</h3>
-    <p>Deep learning model identifies fish breed</p>
+    <p>Identify fish breed using deep learning models.</p>
   </div>
 
-  <div class="card">
+  <div class="module-card">
     <img src="health.png" alt="Health Status">
 
-    <h3>Health Analysis</h3>
-    <p>Healthy or unhealthy classification</p>
+    <h3>Health Status</h3>
+    <p>Classifies fish as healthy or unhealthy.</p>
   </div>
 
-  <div class="card">
+  <div class="module-card">
     <img src="https://img.icons8.com/fluency/96/scale.png">
     <h3>Volume Estimation</h3>
-    <p>Estimated volume using image</p>
+    <p>Estimates fish volume from image features.</p>
   </div>
 
-  <div class="card">
+  <div class="module-card">
     <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png">
-    <h3>AI Powered</h3>
-    <p>EfficientNet based deep learning model</p>
+    <h3>Deep Learning</h3>
+    <p>Powered by EfficientNet neural networks.</p>
   </div>
 </section>
 
 <!-- UPLOAD -->
-<section class="upload-section">
+<div class="upload-box">
   <h2>Upload Fish Image</h2>
-  <input type="file" accept="image/*" onchange="showResult()">
+  <input type="file" accept="image/*">
+  <br>
+  <button onclick="showResult()">Analyze Image</button>
 
-  <div class="result" id="result">
+  <div class="result-box" id="result">
     <h3>FINAL OUTPUT</h3>
-    <p><b>Fish Species :</b> Acanthaluteres </p>
-    <p><b>Health Status :</b> Healthy </p>
-    <p><b>Estimated Volume :</b> 16.93 cm³</p>
+    <p><b>Fish Species:</b> Acanthaluteres spilomelanurus</p>
+    <p><b>Health Status:</b> Healthy</p>
+    <p><b>Estimated Volume:</b> 16.93 cm³</p>
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  © 2025 Fish AI Detection System | Deep Learning Project
+  © 2025 Fish Detection & Health Analysis | Deep Learning Project
 </footer>
 
 <script>
@@ -178,5 +207,6 @@ function showResult() {
   document.getElementById("result").style.display = "block";
 }
 </script>
+
 </body>
 </html>
